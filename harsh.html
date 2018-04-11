@@ -1,0 +1,24 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<form role="search" class="form-cse">
+     <input type="search" placeholder="I'm Looking For..." />
+     <button type="submit">
+         <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
+      </button>
+</form>
+
+
+<script>
+// Google CSE
+/* When a submit button attributed to an input of type "search" is triggered, we just need to get the text from the search box, and pass it to the Google CSE results page as a 'q' parameter. */
+var searchForm = $('.form-cse'); // Get the form
+
+$(searchForm).submit(function(event) { // Listen for a submission.
+    event.preventDefault(); // Stop the submission from just passing through.
+    var q = $(this).find('input').val(); /* Find the child input field and get its value. */
+
+    // Developer's Note: Update this URL to reflect the proper base for 'live' version!
+   window.location.replace('https://www.googleapis.com/customsearch/v1?key=AIzaSyCJlmCiEZ2ls0SmBJ2Q1RV2feVM61ozeaw&cx=004355175602018990017:7brdiqrd5vk&q=' + q); met_loc_replace.asp
+});
+</script>
